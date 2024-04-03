@@ -1,5 +1,5 @@
 
-package BancoCCCP;
+package bancocccp;
 
 public class AtualizadorDeContas {
     

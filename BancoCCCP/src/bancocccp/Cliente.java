@@ -1,4 +1,4 @@
-package BancoCCCP;
+package bancocccp;
 
 public class Cliente {
     private String nome, sobreNome, cpf;
