@@ -69,11 +69,15 @@ public class Conta {
         this.saldo = this.saldo + (this.saldo * taxa);
     }
 
-    void deposita(double valor) {
+    void deposita(double valor) throws ValorInvalidoException {
+        if(valor<0){
+            throw new ValorInvalidoException(valor);
+        }else{
         this.saldo = this.saldo + valor;
+        }
     }
 
-    void transfere(Conta c1, double valor) {
+    void transfere(Conta c1, double valor) throws ValorInvalidoException {
         if (this.saca(valor) == true) {
             c1.deposita(valor);
         } else {

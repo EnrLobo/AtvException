@@ -1,5 +1,8 @@
 package bancocccp;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Teste {
 
     public static void main(String[] args) {
@@ -8,9 +11,21 @@ public class Teste {
         ContaPoupanca cp = new ContaPoupanca();
         
         
-        c.deposita(1000);
-        cc.deposita(1000);
-        cp.deposita(1000);
+        try {
+            c.deposita(1000);
+        } catch (ValorInvalidoException ex) {
+            System.out.println(ex.getMessage());
+        }
+        try {
+            cc.deposita(1000);
+        } catch (ValorInvalidoException ex) {
+            System.out.println(ex.getMessage());
+        }
+        try {
+            cp.deposita(1000);
+        } catch (ValorInvalidoException ex) {
+            System.out.println(ex.getMessage());
+        }
         
         AtualizadorDeContas att = new AtualizadorDeContas(0.15);
         
